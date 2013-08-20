@@ -1,3 +1,8 @@
 Template.postCon.postContent = function () {
-	return Session.get('x1')
+	var posts = Posts.find().fetch()
+	var string = "";
+	for (var i=0; i<posts.length; i++){
+		string+= posts[i].text + "<br/>";
+	}
+	return string;
 }
